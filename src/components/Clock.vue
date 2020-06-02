@@ -56,7 +56,6 @@
 import PlayIcon from "vue-material-design-icons/Play.vue";
 import SettingIcon from "vue-material-design-icons/Cog.vue";
 import PauseIcon from "vue-material-design-icons/PauseCircle.vue";
-import DeleteIcon from "vue-material-design-icons/Delete.vue";
 import ResetIcon from "vue-material-design-icons/LockReset.vue";
 import Modal from "@/components/Modal";
 
@@ -66,7 +65,6 @@ export default {
     PlayIcon,
     SettingIcon,
     PauseIcon,
-    DeleteIcon,
     ResetIcon,
     Modal
   },
@@ -120,7 +118,6 @@ export default {
     },
     activateClock() {
       this.active = !this.active;
-      console.log("Wecker aktiviert");
     }
   }
 };
