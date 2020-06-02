@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h3>Installed CLI Plugins</h3>
+    <h3>Installierte Plugins</h3>
     <ul>
       <li>
         <a
@@ -20,6 +20,14 @@
       </li>
       <li>
         <a
+          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/vue.axios"
+          target="_blank"
+          rel="noopener"
+          >vue-axios</a
+        >
+      </li>
+      <li>
+        <a
           href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router"
           target="_blank"
           rel="noopener"
@@ -32,14 +40,6 @@
           target="_blank"
           rel="noopener"
           >vue-material-design-icons</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex"
-          target="_blank"
-          rel="noopener"
-          >vuex</a
         >
       </li>
       <li>

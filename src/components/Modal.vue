@@ -64,8 +64,8 @@ export default {
       this.$emit("hide");
     },
     onShown() {
-      const { closeButton } = this.$refs;
-      if (closeButton) closeButton.focus();
+      // const { closeButton } = this.$refs;
+      // if (closeButton) closeButton.focus();
       this.$emit("shown");
     },
     onHidden() {

@@ -5,13 +5,19 @@
       <span id="hh">{{ clockHours }}</span> :
       <span id="mm">{{ clockMinutes }}</span>
     </div>
-    <button id="play" class="clock__icon">
-      <PlayIcon :size="iconSize" />
-    </button>
+    <div class="clock__icon-list">
+      <button id="play" class="clock__icon">
+        <PlayIcon v-if="!active" :size="iconSize" @click="activateClock" />
+        <PauseIcon v-else :size="iconSize" @click="activateClock" />
+      </button>
+      <button id="settings" class="clock__icon">
+        <SettingIcon :size="iconSize" @click="clockSetting" />
+      </button>
+      <button id="reset" class="timer__icon" @click="resetClock">
+        <ResetIcon :size="iconSize" />
+      </button>
+    </div>
 
-    <button id="settings" class="clock__icon">
-      <SettingIcon :size="iconSize" @click="clockSetting" />
-    </button>
     <Modal ref="modal" title="Weckereinstellung">
       <div class="row">
         <div class="input-field col s6">
@@ -39,19 +45,7 @@
         </div>
 
         <div class="col s12" style="margin-top: 40px">
-          <a
-            id="backBtn"
-            class="waves-effect waves-light btn pink accent-2"
-            style="margin-bottom: 5px;"
-          >
-            <i class="large material-icons">arrow_back</i>
-          </a>
-          <a
-            id="applyBtn"
-            class="waves-effect waves-light btn pink accent-2"
-            style="margin-bottom: 5px;"
-            >Apply</a
-          >
+          <button @click="hideModal">Übernehmen</button>
         </div>
       </div>
     </Modal>
@@ -61,6 +55,9 @@
 <script>
 import PlayIcon from "vue-material-design-icons/Play.vue";
 import SettingIcon from "vue-material-design-icons/Cog.vue";
+import PauseIcon from "vue-material-design-icons/PauseCircle.vue";
+import DeleteIcon from "vue-material-design-icons/Delete.vue";
+import ResetIcon from "vue-material-design-icons/LockReset.vue";
 import Modal from "@/components/Modal";
 
 export default {
@@ -68,6 +65,9 @@ export default {
   components: {
     PlayIcon,
     SettingIcon,
+    PauseIcon,
+    DeleteIcon,
+    ResetIcon,
     Modal
   },
   props: {
@@ -86,16 +86,12 @@ export default {
       iconSize: 30,
       hoursSelected: 0,
       minutesSelected: 0,
-      paddingHour: 0
+      paddingHour: 0,
+      active: false
     };
   },
   computed: {
     clockMinutes() {
-      // const desiredMinute = parseInt(this.minutes, 10) + this.minutesSelected;
-      // if (desiredMinute > 60) {
-      //   return desiredMinute - 60;
-      // }
-      console.log(this.minutes, this.minutesSelected);
       return parseInt(this.minutes, 10) + parseInt(this.minutesSelected, 10);
     },
     clockHours() {
@@ -112,8 +108,19 @@ export default {
     }
   },
   methods: {
+    resetClock() {
+      this.hoursSelected = 0;
+      this.minutesSelected = 0;
+    },
+    hideModal() {
+      this.$refs.modal.hide();
+    },
     clockSetting() {
       this.$refs.modal.show();
+    },
+    activateClock() {
+      this.active = !this.active;
+      console.log("Wecker aktiviert");
     }
   }
 };
@@ -122,15 +129,25 @@ export default {
 <style lang="scss">
 .clock {
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  padding-left: 10%;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
 
+  @media (min-width: 400px) {
+    justify-content: center;
+  }
+
+  &__icon-list {
+    min-width: 300px;
+  }
   &__headline {
     font-size: 16px;
     margin: 0;
     padding: 0;
   }
   &__countdown {
-    width: 300px;
+    width: 200px;
     height: 30px;
     top: 8px;
     left: 0;

@@ -2,14 +2,18 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/counter">Counter</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/counter">Wecker</router-link> |
     </div>
     <portal-target name="globals" />
-
     <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  name: "App"
+};
+</script>
 
 <style lang="scss">
 #app {

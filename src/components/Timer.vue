@@ -150,6 +150,7 @@ export default {
     font-size: 23px;
     text-align: center;
     margin: auto;
+    padding-bottom: 100px;
   }
 
   &__hours {
