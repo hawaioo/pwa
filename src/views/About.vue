@@ -1,17 +1,19 @@
 <template>
   <div class="about">
-    <h1>Created by Zili Huang</h1>
-    <PluginList></PluginList>
+    <h1>About Page</h1>
+    <p>{{ asd }}</p>
+    <p>{{ test }}</p>
   </div>
 </template>
 
 <script>
-import PluginList from "@/components/PluginList.vue";
-
 export default {
   name: "About",
-  components: {
-    PluginList
+  data() {
+    return {
+      asd: process.env.NODE_ENV,
+      test: process.env.BASE_URL
+    };
   }
 };
 </script>

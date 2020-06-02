@@ -1,0 +1,19 @@
+{
+  "name": "Offlinewecker",
+  "short_name": "Offlinewecker",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "theme_color": "#303f9f",
+  "background_color": "#303f9f",
+    "icons": [{
+        "src": "img/icons/android-chrome-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "img/icons/android-chrome-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+}

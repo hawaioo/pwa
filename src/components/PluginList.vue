@@ -1,6 +1,5 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li>
@@ -29,6 +28,14 @@
       </li>
       <li>
         <a
+          href="https://www.npmjs.com/package/vue-material-design-icons"
+          target="_blank"
+          rel="noopener"
+          >vue-material-design-icons</a
+        >
+      </li>
+      <li>
+        <a
           href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex"
           target="_blank"
           rel="noopener"
@@ -43,24 +50,13 @@
           >eslint</a
         >
       </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest"
-          target="_blank"
-          rel="noopener"
-          >unit-jest</a
-        >
-      </li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: "HelloWorld",
-  props: {
-    msg: String
-  }
+  name: "PluginList"
 };
 </script>
 

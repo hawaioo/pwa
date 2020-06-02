@@ -1,21 +1,21 @@
 <template>
-  <div>
-    <h1>Offlinewecker</h1>
-    <PluginList></PluginList>
+  <div class="counter">
+    <Timer></Timer>
+    <!-- <Weather></Weather> -->
   </div>
 </template>
 
 <script>
-import PluginList from "@/components/PluginList.vue";
 import Timer from "@/components/Timer.vue";
 // import Weather from "@/components/Weather.vue";
 
 export default {
-  name: "Home",
+  name: "Counter",
   components: {
-    PluginList,
     Timer
-    // Weather
+  },
+  data() {
+    return {};
   }
 };
 </script>
